@@ -9,15 +9,32 @@ class BinarySearchTree
 	# Add the value to the bst
 	def add(value)
 
-		if @root.nil?
-			@root = Node.new(value)
+		add_node_value(@root, value)
+	end
+
+	def add_node_value(node, value)
+
+		if node.nil?
+			puts "Set root to #{value}"
+			node = Node.new(value)
 		else
-			if value < @root.value
-				puts "Set left to #{value}"
-				@root.left = Node.new(value)
-			elsif value > @root.value
-				puts "Set right to #{value}"
-				@root.right = Node.new(value)
+			if value < node.value
+
+				if node.nil?
+					puts "Set left to #{value} for #{@root.value}"
+					node.left = Node.new(value)
+				else
+					add_node_value(node.left, value)
+				end
+				
+			elsif value > node.value
+
+				if node.nil?
+					puts "Set right to #{value} for #{@root.value}"
+					node.right = Node.new(value)
+				else
+					add_node_value(node.right, value)
+				end
 			end
 		end
 	end
@@ -64,7 +81,7 @@ class BinarySearchTree
 
 	def breadth_display
 
-		
+
 	end
 
 end

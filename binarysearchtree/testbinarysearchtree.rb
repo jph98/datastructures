@@ -11,6 +11,8 @@ class TestBinarySearchTree < Minitest::Test
 
     def test_add
 
+        skip()
+
     	bst = BinarySearchTree.new()
     	bst.add(2)
     	bst.add(4)
@@ -28,8 +30,8 @@ class TestBinarySearchTree < Minitest::Test
     	bst.add(2)
     	bst.add(4)
     	bst.add(1)
-        bst.add(6)
-    	
+        bst.add(7)
+
     	assert_equal 2, bst.depth_first_search(2)
     	assert_equal 4, bst.depth_first_search(4)
     	assert_equal 1, bst.depth_first_search(1)
