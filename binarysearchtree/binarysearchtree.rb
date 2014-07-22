@@ -9,14 +9,15 @@ class BinarySearchTree
 	# Add the value to the bst
 	def add(value)
 
+		@root = nil
 		add_node_value(@root, value)
 	end
 
 	def add_node_value(node, value)
 
 		if node.nil?
-			puts "Set root to #{value}"
 			node = Node.new(value)
+			puts "Set node to: #{node.value}"
 		else
 			if value < node.value
 
@@ -26,7 +27,7 @@ class BinarySearchTree
 				else
 					add_node_value(node.left, value)
 				end
-				
+
 			elsif value > node.value
 
 				if node.nil?
