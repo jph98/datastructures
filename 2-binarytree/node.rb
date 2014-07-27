@@ -7,4 +7,8 @@ class Node
 	def initialize(value)
 		@value = value
 	end
+
+	def to_s
+		return "#{@value}"
+	end
 end
