@@ -32,9 +32,12 @@ Graphs
 
 * Single Linked List
 * Graph Basics - http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=graphsDataStrucs1
+* Adjacency List, Matrix.  Distance Matrix (distance/weight).  Incidence List.  Incidence Matrix.
 * Graphs represented by nodes, graphs represented by arrays (matrix)
 * Minimum Spanning Tree
 * Real world problems with graphs (social network)
+* Travelling Salesman
+* A-Star - http://www.redblobgames.com/pathfinding/a-star/introduction.html
 
 Dynamic Algorithms
 ==================
