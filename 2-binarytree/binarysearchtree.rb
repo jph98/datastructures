@@ -81,16 +81,50 @@ class BinarySearchTree
 	# - inorder
 	# - postorder
 	# See - https://www.khanacademy.org/cs/depth-first-traversals-of-binary-trees/934024358
-	def depth_first()
+	def depth_first_traversal()
 
+		if @root.nil?
+			puts "No tree"
+			return []
+		end
+
+		# Our set of nodes to visit
+		to_visit = Array.new()		
+		to_visit.push(@root)
+
+		# Traverse to_visit and return visited
+		puts "\nDepth first traversal..."
+		visited = traverse(to_visit, Array.new())
+
+		return visited
 	end
 
-	def display_nodes(display)
-		return display
+	def traverse(to_visit, visited)
+
+		while (!to_visit.empty?)
+
+			node = to_visit.pop()
+			visited.push(node)
+			puts "Visited #{node} L:#{node.left} R:#{node.right}"
+
+			# Right has to come first to be visited AFTER left
+			if !node.right.nil?
+				puts "Pushed R: #{node.right}"
+				to_visit.push(node.right)
+			end
+
+			if !node.left.nil?
+				puts "Pushed L: #{node.left}"
+				to_visit.push(node.left)
+			end
+
+		end
+
+		return visited
 	end
 
 	# 2. There's also a breadth first search (which uses a queue)
-	def breadth_first()
+	def breadth_first_traversal()
 
 		# Use a queue
 		if @root.nil?
